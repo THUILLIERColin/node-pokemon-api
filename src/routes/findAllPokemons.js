@@ -5,9 +5,6 @@ module.exports = (app) => {
     Pokemon.findAll()
       .then(pokemons => {
         const message = 'La liste des pokémons a bien été récupérée.'
-        pokemons.map(pokemon => {
-          pokemon.types = pokemon.types.split(',')
-        })
         res.json({ message, data: pokemons })
       })
   })
